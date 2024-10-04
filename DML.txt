@@ -1,0 +1,140 @@
+INSERT INTO suscripcion (nombre, precio_mensual, duracion) VALUES
+('Básica', 9.99, 30),
+('Premium', 14.99, 30),
+('Familiar', 19.99, 30),
+('Estudiante', 4.99, 30),
+('Anual', 99.99, 365);
+
+
+
+
+INSERT INTO genero (nombre) VALUES
+('Pop'),
+('Rock'),
+('Jazz'),
+('Hip Hop'),
+('Clásica'),
+('Reggaeton'),
+('Electrónica'),
+('Folk'),
+('R&B'),
+('Metal');
+
+
+
+INSERT INTO artista (nombre, nacionalidad, descripcion) VALUES
+('Led Zeppelin', 'Reino Unido', 'Una de las bandas más influyentes en la historia del rock.'),
+('Queen', 'Reino Unido', 'Banda icónica liderada por Freddie Mercury, conocida por sus impresionantes actuaciones en vivo.'),
+('Nirvana', 'Estados Unidos', 'Banda de grunge que definió una generación con su álbum "Nevermind".'),
+('Metallica', 'Estados Unidos', 'Grupo pionero del metal, conocido por su energía en el escenario y sus letras profundas.'),
+('Oasis', 'Reino Unido', 'Banda de Britpop famosa por su álbum "(What\'s the Story) Morning Glory?".'),
+('AC/DC', 'Australia', 'Banda australiana de rock, conocida por su sonido potente y sus himnos atemporales.'),
+('Guns N\' Roses', 'Estados Unidos', 'Banda de hard rock que alcanzó la fama mundial con su álbum "Appetite for Destruction".'),
+('Red Hot Chili Peppers', 'Estados Unidos', 'Banda conocida por su fusión de rock, funk y punk, con letras introspectivas.'),
+('The Rolling Stones', 'Reino Unido', 'Banda de rock clásica con una carrera que abarca más de cinco décadas.'),
+('Foo Fighters', 'Estados Unidos', 'Formada por el ex-baterista de Nirvana, Dave Grohl, con un sonido alternativo potente.');
+
+
+
+
+INSERT INTO album (fk_artista, nombre, fecha_lanzamiento, descripcion) VALUES
+(1, 'Led Zeppelin IV', '1971-11-08', 'Álbum icónico que incluye "Stairway to Heaven".'),
+(2, 'A Night at the Opera', '1975-11-21', 'Considerado uno de los mejores álbumes de rock de todos los tiempos.'),
+(3, 'Nevermind', '1991-09-24', 'Álbum que catapultó a Nirvana a la fama mundial.'),
+(4, 'Metallica', '1991-08-12', 'Conocido como el "Álbum Negro", incluye varios clásicos del metal.'),
+(5, '(What\'s the Story) Morning Glory?', '1995-10-30', 'Álbum que incluye los éxitos "Wonderwall" y "Don\'t Look Back in Anger".'),
+(1, 'Houses of the Holy', '1973-03-28', 'Álbum que mezcla diversos estilos musicales, incluyendo reggae y funk.'),
+(2, 'News of the World', '1977-10-28', 'Con éxitos como "We Will Rock You" y "We Are the Champions".'),
+(3, 'In Utero', '1993-09-21', 'El tercer y último álbum de estudio de Nirvana, con un sonido más crudo.'),
+(4, 'Load', '1996-06-04', 'Álbum que presenta un cambio en el sonido de Metallica.'),
+(5, 'Dig Out Your Soul', '2008-10-06', 'El último álbum de estudio de Oasis, que explora nuevos sonidos.');
+
+
+
+
+
+
+INSERT INTO cancion (fk_album, fk_artista, fk_genero, nombre, duracion, descripcion) VALUES
+(1, 1, 1, 'Black Dog', '00:04:55', 'Una de las canciones más reconocibles de Led Zeppelin.'),
+(1, 1, 1, 'Rock and Roll', '00:03:40', 'Himno del rock con una energía inigualable.'),
+(2, 2, 2, 'Bohemian Rhapsody', '00:05:54', 'Una obra maestra del rock progresivo y opera rock.'),
+(2, 2, 2, 'You\'re My Best Friend', '00:02:52', 'Una hermosa balada escrita por John Deacon.'),
+(3, 3, 3, 'Smells Like Teen Spirit', '00:05:01', 'Canción que definió la generación de los 90.'),
+(3, 3, 3, 'Come As You Are', '00:03:39', 'Una canción que mezcla rock y grunge con un toque melódico.'),
+(4, 4, 4, 'Enter Sandman', '00:05:31', 'Uno de los temas más populares de Metallica.'),
+(4, 4, 4, 'The Unforgiven', '00:04:18', 'Una balada oscura que aborda la lucha personal.'),
+(5, 5, 5, 'Wonderwall', '00:04:18', 'Una de las canciones más queridas de Oasis.'),
+(5, 5, 5, 'Don\'t Look Back in Anger', '00:04:47', 'Un himno de esperanza y resiliencia.'),
+(1, 1, 1, 'Stairway to Heaven', '00:08:02', 'Una de las canciones más famosas en la historia del rock.'),
+(2, 2, 2, 'Killer Queen', '00:03:00', 'Una canción que muestra la habilidad vocal de Freddie Mercury.'),
+(3, 3, 3, 'Lithium', '00:04:17', 'Una balada melancólica de Nirvana.'),
+(4, 4, 4, 'Nothing Else Matters', '00:06:46', 'Una balada que habla sobre la conexión emocional.'),
+(5, 5, 5, 'Champagne Supernova', '00:07:27', 'Una canción introspectiva que invita a la reflexión.');
+
+
+
+
+
+
+
+INSERT INTO playlist (fk_usuario, nombre, fecha_creacion, descripcion) VALUES
+(1, 'Mis Clásicos de Rock', '2024-10-01', 'Una colección de los mejores clásicos del rock.'),
+(1, 'Favoritas de Nirvana', '2024-10-02', 'Las canciones más queridas de Nirvana.'),
+(2, 'Baladas de los 80', '2024-10-01', 'Una selección de las mejores baladas de la década de los 80.'),
+(2, 'Rock en Español', '2024-10-02', 'Los mejores temas de rock en español.'),
+(3, 'Mis Canciones Favoritas', '2024-10-03', 'Una lista personal con mis canciones preferidas.'),
+(4, 'Playlist de Entrenamiento', '2024-10-04', 'Música motivadora para mis sesiones de entrenamiento.'),
+(5, 'Lo Mejor de Oasis', '2024-10-05', 'Los grandes éxitos de Oasis en un solo lugar.'),
+(5, 'Álbumes Clásicos', '2024-10-06', 'Una colección de álbumes clásicos que todos deberían escuchar.'),
+(3, 'Canciones de Amor', '2024-10-03', 'Una lista de canciones románticas perfectas para dedicar.'),
+(4, 'Mis Éxitos', '2024-10-04', 'Una selección de mis éxitos favoritos de diferentes géneros.');
+
+
+
+
+INSERT INTO playlist_cancion (fk_playlist, fk_cancion) VALUES
+(1, 1),  -- "Mis Clásicos de Rock" incluye la canción con id_cancion 1
+(1, 2),  -- "Mis Clásicos de Rock" incluye la canción con id_cancion 2
+(2, 3),  -- "Favoritas de Nirvana" incluye la canción con id_cancion 3
+(2, 4),  -- "Favoritas de Nirvana" incluye la canción con id_cancion 4
+(3, 5),  -- "Baladas de los 80" incluye la canción con id_cancion 5
+(3, 6),  -- "Baladas de los 80" incluye la canción con id_cancion 6
+(4, 7),  -- "Rock en Español" incluye la canción con id_cancion 7
+(4, 8),  -- "Rock en Español" incluye la canción con id_cancion 8
+(5, 9),  -- "Mis Canciones Favoritas" incluye la canción con id_cancion 9
+(6, 10); -- "Playlist de Entrenamiento" incluye la canción con id_cancion 10
+
+
+
+
+
+INSERT INTO reproduccion (fk_usuario, fk_cancion, fecha_hora) VALUES
+(1, 1, '2024-10-01 12:30:00'),  -- Usuario 1 reproduce Canción 1
+(1, 2, '2024-10-01 12:45:00'),  -- Usuario 1 reproduce Canción 2
+(2, 3, '2024-10-02 15:20:00'),  -- Usuario 2 reproduce Canción 3
+(2, 4, '2024-10-02 15:25:00'),  -- Usuario 2 reproduce Canción 4
+(3, 5, '2024-10-03 18:00:00'),  -- Usuario 3 reproduce Canción 5
+(4, 6, '2024-10-04 09:15:00'),  -- Usuario 4 reproduce Canción 6
+(5, 7, '2024-10-05 14:10:00'),  -- Usuario 5 reproduce Canción 7
+(5, 8, '2024-10-05 14:15:00'),  -- Usuario 5 reproduce Canción 8
+(3, 9, '2024-10-03 20:00:00'),  -- Usuario 3 reproduce Canción 9
+(4, 10, '2024-10-04 11:00:00'); -- Usuario 4 reproduce Canción 10
+
+
+
+
+
+
+INSERT INTO seguidor (fk_usuario, fk_artista) VALUES
+(1, 1),  -- Usuario 1 sigue a Artista 1 (Por ejemplo, Metallica)
+(1, 2),  -- Usuario 1 sigue a Artista 2 (Por ejemplo, Nirvana)
+(2, 2),  -- Usuario 2 sigue a Artista 2 (Nirvana)
+(2, 3),  -- Usuario 2 sigue a Artista 3 (Por ejemplo, Oasis)
+(3, 1),  -- Usuario 3 sigue a Artista 1 (Metallica)
+(3, 3),  -- Usuario 3 sigue a Artista 3 (Oasis)
+(4, 2),  -- Usuario 4 sigue a Artista 2 (Nirvana)
+(4, 3),  -- Usuario 4 sigue a Artista 3 (Oasis)
+(5, 1),  -- Usuario 5 sigue a Artista 1 (Metallica)
+(5, 2);  -- Usuario 5 sigue a Artista 2 (Nirvana)
+
+
