@@ -146,8 +146,8 @@ INSERT INTO cancion (fk_album, fk_artista, fk_genero, nombre, duracion, descripc
 (10, 5, 4, 'The Shock of the Lightning', '5:02', 'Uno de los sencillos más potentes de Oasis en su último álbum.'),
 (11, 6, 1, 'Highway to Hell', '3:28', 'El himno de AC/DC que definió su carrera y el rock en general.'),
 (12, 7, 1, 'Sweet Child O\' Mine', '5:56', 'Uno de los éxitos más grandes de Guns N\' Roses, con un riff de guitarra icónico.'),
-(13, 8, 5, 'Californication', '5:29', 'Una de las canciones más famosas de los Red Hot Chili Peppers, con un mensaje introspectivo sobre la cultura de California.');
-
+(13, 8, 5, 'Californication', '5:29', 'Una de las canciones más famosas de los Red Hot Chili Peppers, con un mensaje introspectivo sobre la cultura de California.'),
+(1, 1, 1, 'Rock and Roll', '3:40', 'Una celebración del rock and roll, famosa por su energía y ritmo contagioso.');
 
 
 
@@ -175,28 +175,54 @@ INSERT INTO playlist (fk_usuario, nombre, fecha_creacion, descripcion) VALUES
 
 
 
+INSERT INTO seguidor (fk_usuario, fk_artista) VALUES
+(1, 1),  -- Usuario 1 sigue al artista 1: Led Zeppelin
+(1, 2),  -- Usuario 1 sigue al artista 2: Queen
+(1, 3),  -- Usuario 1 sigue al artista 3: Nirvana
+(2, 1),  -- Usuario 2 sigue al artista 1: Led Zeppelin
+(2, 4),  -- Usuario 2 sigue al artista 4: Metallica
+(2, 5),  -- Usuario 2 sigue al artista 5: Oasis
+(3, 2),  -- Usuario 3 sigue al artista 2: Queen
+(3, 6),  -- Usuario 3 sigue al artista 6: AC/DC
+(3, 7),  -- Usuario 3 sigue al artista 7: Guns N' Roses
+(4, 4),  -- Usuario 4 sigue al artista 4: Metallica
+(4, 8),  -- Usuario 4 sigue al artista 8: Red Hot Chili Peppers
+(5, 5),  -- Usuario 5 sigue al artista 5: Oasis
+(5, 9),  -- Usuario 5 sigue al artista 9: Muse
+(1, 6),  -- Usuario 1 sigue al artista 6: AC/DC
+(2, 7),  -- Usuario 2 sigue al artista 7: Guns N' Roses
+(3, 8),  -- Usuario 3 sigue al artista 8: Red Hot Chili Peppers
+(4, 9),  -- Usuario 4 sigue al artista 9: Muse
+(5, 1),  -- Usuario 5 sigue al artista 1: Led Zeppelin
+(1, 4),  -- Usuario 1 sigue al artista 4: Metallica
+(2, 3);  -- Usuario 2 sigue al artista 3: Nirvana
+
+
+
 
 INSERT INTO playlist_cancion (fk_playlist, fk_cancion) VALUES
-(1, 1),  -- Playlist 1: Mi Rock Clásico -> Canción: "Stairway to Heaven" de Led Zeppelin
-(1, 2),  -- Playlist 1: Mi Rock Clásico -> Canción: "Bohemian Rhapsody" de Queen
-(1, 3),  -- Playlist 1: Mi Rock Clásico -> Canción: "Smells Like Teen Spirit" de Nirvana
-(2, 4),  -- Playlist 2: Hard Rock Energético -> Canción: "Enter Sandman" de Metallica
-(2, 5),  -- Playlist 2: Hard Rock Energético -> Canción: "Wonderwall" de Oasis
-(2, 6),  -- Playlist 2: Hard Rock Energético -> Canción: "Highway to Hell" de AC/DC
-(3, 7),  -- Playlist 3: Sonido Alternativo -> Canción: "Sweet Child o' Mine" de Guns N' Roses
-(3, 8),  -- Playlist 3: Sonido Alternativo -> Canción: "Californication" de Red Hot Chili Peppers
-(3, 9),  -- Playlist 3: Sonido Alternativo -> Canción: "Brown Sugar" de The Rolling Stones
-(4, 10), -- Playlist 4: Nuevas Bandas -> Canción: "Everlong" de Foo Fighters
-(4, 11), -- Playlist 4: Nuevas Bandas -> Canción: "Do I Wanna Know?" de Arctic Monkeys
-(4, 12), -- Playlist 4: Nuevas Bandas -> Canción: "Viva La Vida" de Coldplay
-(5, 13), -- Playlist 5: Clásicos de los 60 -> Canción: "Come Together" de The Beatles
-(5, 14), -- Playlist 5: Clásicos de los 60 -> Canción: "Money" de Pink Floyd
-(5, 15), -- Playlist 5: Clásicos de los 60 -> Canción: "Creep" de Radiohead
-(6, 16), -- Playlist 6: Mejores Éxitos -> Canción: "Last Resort" de Papa Roach
-(6, 17), -- Playlist 6: Mejores Éxitos -> Canción: "Boulevard of Broken Dreams" de Green Day
-(6, 18), -- Playlist 6: Mejores Éxitos -> Canción: "Knights of Cydonia" de Muse
-(7, 19), -- Playlist 7: Canciones Románticas -> Canción: "Fix You" de Coldplay
-(7, 20); -- Playlist 7: Canciones Románticas -> Canción: "I Want to Break Free" de Queen
+(1, 1),  -- Playlist 1 incluye la canción 1: "Stairway to Heaven"
+(1, 2),  -- Playlist 1 incluye la canción 2: "Black Dog"
+(1, 3),  -- Playlist 1 incluye la canción 3: "Bohemian Rhapsody"
+(2, 4),  -- Playlist 2 incluye la canción 4: "Smells Like Teen Spirit"
+(2, 5),  -- Playlist 2 incluye la canción 5: "Come as You Are"
+(2, 6),  -- Playlist 2 incluye la canción 6: "Enter Sandman"
+(3, 7),  -- Playlist 3 incluye la canción 7: "Wonderwall"
+(3, 8),  -- Playlist 3 incluye la canción 8: "Don't Look Back in Anger"
+(3, 9),  -- Playlist 3 incluye la canción 9: "The Ocean"
+(4, 10), -- Playlist 4 incluye la canción 10: "The Unforgiven"
+(4, 11), -- Playlist 4 incluye la canción 11: "Until It Sleeps"
+(4, 12), -- Playlist 4 incluye la canción 12: "Heart-Shaped Box"
+(5, 13), -- Playlist 5 incluye la canción 13: "The Shock of the Lightning"
+(5, 14), -- Playlist 5 incluye la canción 14: "Highway to Hell"
+(5, 15), -- Playlist 5 incluye la canción 15: "Sweet Child O' Mine"
+(6, 16), -- Playlist 6 incluye la canción 16: "Californication"
+(6, 17), -- Playlist 6 incluye la canción 17: "Stairway to Heaven" (de nuevo)
+(6, 18), -- Playlist 6 incluye la canción 18: "We Will Rock You"
+(7, 1),  -- Playlist 7 incluye la canción 1: "Stairway to Heaven" (de nuevo)
+(7, 4),  -- Playlist 7 incluye la canción 4: "Smells Like Teen Spirit"
+(7, 8);  -- Playlist 7 incluye la canción 8: "Don't Look Back in Anger"
+
 
 
 
@@ -220,32 +246,7 @@ INSERT INTO reproduccion (fk_usuario, fk_cancion, fecha_hora) VALUES
 (4, 17, '2024-10-01 11:15:00'), -- Usuario 4 reproduce "Highway to Hell"
 (5, 18, '2024-10-01 11:20:00'), -- Usuario 5 reproduce "Sweet Child O' Mine"
 (1, 19, '2024-10-01 11:25:00'), -- Usuario 1 reproduce "Californication"
-(2, 20, '2024-10-01 11:30:00'), -- Usuario 2 reproduce "Uprising"
 (3, 3, '2024-10-01 11:35:00'),  -- Usuario 3 reproduce "Bohemian Rhapsody"
 (4, 5, '2024-10-01 11:40:00');  -- Usuario 4 reproduce "Smells Like Teen Spirit"
 
 
-
-
-
-INSERT INTO seguidor (fk_usuario, fk_artista) VALUES
-(1, 1),  -- Usuario 1 sigue al artista 1: Led Zeppelin
-(1, 2),  -- Usuario 1 sigue al artista 2: Queen
-(1, 3),  -- Usuario 1 sigue al artista 3: Nirvana
-(2, 1),  -- Usuario 2 sigue al artista 1: Led Zeppelin
-(2, 4),  -- Usuario 2 sigue al artista 4: Metallica
-(2, 5),  -- Usuario 2 sigue al artista 5: Oasis
-(3, 2),  -- Usuario 3 sigue al artista 2: Queen
-(3, 6),  -- Usuario 3 sigue al artista 6: AC/DC
-(3, 7),  -- Usuario 3 sigue al artista 7: Guns N' Roses
-(4, 4),  -- Usuario 4 sigue al artista 4: Metallica
-(4, 8),  -- Usuario 4 sigue al artista 8: Red Hot Chili Peppers
-(5, 5),  -- Usuario 5 sigue al artista 5: Oasis
-(5, 9),  -- Usuario 5 sigue al artista 9: Muse
-(1, 6),  -- Usuario 1 sigue al artista 6: AC/DC
-(2, 7),  -- Usuario 2 sigue al artista 7: Guns N' Roses
-(3, 8),  -- Usuario 3 sigue al artista 8: Red Hot Chili Peppers
-(4, 9),  -- Usuario 4 sigue al artista 9: Muse
-(5, 1),  -- Usuario 5 sigue al artista 1: Led Zeppelin
-(1, 4),  -- Usuario 1 sigue al artista 4: Metallica
-(2, 3);  -- Usuario 2 sigue al artista 3: Nirvana
