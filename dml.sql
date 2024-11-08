@@ -22,28 +22,28 @@ INSERT INTO suscripcion (nombre, precio_mensual, duracion) VALUES
 
 
 
+INSERT INTO `usuario`(`fk_suscripcion`, `nombre`, `apellido`, `dni`, `telefono`, `correo`, `fecha_registro`) VALUES
+(1, 'Juan', 'Pérez', '12345678', '1234567890', 'juan.perez@example.com', '2024-01-15'),  -- Usuario 1
+(2, 'María', 'Gómez', '23456789', '2345678901', 'maria.gomez@example.com', '2024-01-16'),  -- Usuario 2
+(1, 'Carlos', 'López', '34567890', '3456789012', 'carlos.lopez@example.com', '2024-01-17'),  -- Usuario 3
+(3, 'Ana', 'Martínez', '45678901', '4567890123', 'ana.martinez@example.com', '2024-01-18'),  -- Usuario 4
+(2, 'Luis', 'Hernández', '56789012', '5678901234', 'luis.hernandez@example.com', '2024-01-19'),  -- Usuario 5
+(1, 'Sofía', 'Ramírez', '67890123', '6789012345', 'sofia.ramirez@example.com', '2024-01-20'),  -- Usuario 6
+(2, 'Diego', 'Torres', '78901234', '7890123456', 'diego.torres@example.com', '2024-01-21'),  -- Usuario 7
+(3, 'Valeria', 'Rojas', '89012345', '8901234567', 'valeria.rojas@example.com', '2024-01-22'),  -- Usuario 8
+(1, 'Javier', 'Castillo', '90123456', '9012345678', 'javier.castillo@example.com', '2024-01-23'),  -- Usuario 9
+(2, 'Camila', 'Salazar', '01234567', '0123456789', 'camila.salazar@example.com', '2024-01-24'),  -- Usuario 10
+(1, 'Fernando', 'Mendoza', '13579246', '1357924680', 'fernando.mendoza@example.com', '2024-01-25'),  -- Usuario 11
+(3, 'Lucía', 'Sánchez', '24681357', '2468135790', 'lucia.sanchez@example.com', '2024-01-26'),  -- Usuario 12
+(1, 'Andrés', 'Jiménez', '35792468', '3579246801', 'andres.jimenez@example.com', '2024-01-27'),  -- Usuario 13
+(2, 'Isabel', 'Paredes', '46813579', '4681357902', 'isabel.paredes@example.com', '2024-01-28'),  -- Usuario 14
+(1, 'Pablo', 'Guerrero', '57924680', '5792468013', 'pablo.guerrero@example.com', '2024-01-29'),  -- Usuario 15
+(3, 'Gloria', 'Cruz', '68035791', '6803579124', 'gloria.cruz@example.com', '2024-01-30'),  -- Usuario 16
+(1, 'Ricardo', 'Fuentes', '79146802', '7914680235', 'ricardo.fuentes@example.com', '2024-01-31'),  -- Usuario 17
+(2, 'Laura', 'Villanueva', '80257913', '8025791346', 'laura.villanueva@example.com', '2024-02-01'),  -- Usuario 18
+(3, 'Samuel', 'Castañeda', '91368024', '9136802457', 'samuel.castaneda@example.com', '2024-02-02'),  -- Usuario 19
+(1, 'Estefanía', 'Olivares', '02479135', '0247913568', 'estefania.olivares@example.com', '2024-02-03');  -- Usuario 20
 
-INSERT INTO `usuario`(`id_usuario`, `fk_suscripcion`, `nombre`, `apellido`, `dni`, `telefono`, `correo`, `fecha_registro`) VALUES
-(1, 1, 'Juan', 'Pérez', '12345678', '1234567890', 'juan.perez@example.com', '2024-01-15'),  -- Usuario 1
-(2, 2, 'María', 'Gómez', '23456789', '2345678901', 'maria.gomez@example.com', '2024-01-16'),  -- Usuario 2
-(3, 1, 'Carlos', 'López', '34567890', '3456789012', 'carlos.lopez@example.com', '2024-01-17'),  -- Usuario 3
-(4, 3, 'Ana', 'Martínez', '45678901', '4567890123', 'ana.martinez@example.com', '2024-01-18'),  -- Usuario 4
-(5, 2, 'Luis', 'Hernández', '56789012', '5678901234', 'luis.hernandez@example.com', '2024-01-19'),  -- Usuario 5
-(6, 1, 'Sofía', 'Ramírez', '67890123', '6789012345', 'sofia.ramirez@example.com', '2024-01-20'),  -- Usuario 6
-(7, 2, 'Diego', 'Torres', '78901234', '7890123456', 'diego.torres@example.com', '2024-01-21'),  -- Usuario 7
-(8, 3, 'Valeria', 'Rojas', '89012345', '8901234567', 'valeria.rojas@example.com', '2024-01-22'),  -- Usuario 8
-(9, 1, 'Javier', 'Castillo', '90123456', '9012345678', 'javier.castillo@example.com', '2024-01-23'),  -- Usuario 9
-(10, 2, 'Camila', 'Salazar', '01234567', '0123456789', 'camila.salazar@example.com', '2024-01-24'),  -- Usuario 10
-(11, 1, 'Fernando', 'Mendoza', '13579246', '1357924680', 'fernando.mendoza@example.com', '2024-01-25'),  -- Usuario 11
-(12, 3, 'Lucía', 'Sánchez', '24681357', '2468135790', 'lucia.sanchez@example.com', '2024-01-26'),  -- Usuario 12
-(13, 1, 'Andrés', 'Jiménez', '35792468', '3579246801', 'andres.jimenez@example.com', '2024-01-27'),  -- Usuario 13
-(14, 2, 'Isabel', 'Paredes', '46813579', '4681357902', 'isabel.paredes@example.com', '2024-01-28'),  -- Usuario 14
-(15, 1, 'Pablo', 'Guerrero', '57924680', '5792468013', 'pablo.guerrero@example.com', '2024-01-29'),  -- Usuario 15
-(16, 3, 'Gloria', 'Cruz', '68035791', '6803579124', 'gloria.cruz@example.com', '2024-01-30'),  -- Usuario 16
-(17, 1, 'Ricardo', 'Fuentes', '79146802', '7914680235', 'ricardo.fuentes@example.com', '2024-01-31'),  -- Usuario 17
-(18, 2, 'Laura', 'Villanueva', '80257913', '8025791346', 'laura.villanueva@example.com', '2024-02-01'),  -- Usuario 18
-(19, 3, 'Samuel', 'Castañeda', '91368024', '9136802457', 'samuel.castaneda@example.com', '2024-02-02'),  -- Usuario 19
-(20, 1, 'Estefanía', 'Olivares', '02479135', '0247913568', 'estefania.olivares@example.com', '2024-02-03');  -- Usuario 20
 
 
 
@@ -69,6 +69,7 @@ INSERT INTO genero (nombre) VALUES
 ('Soul'),
 ('Alternativo'),
 ('Latino');
+
 
 
 
