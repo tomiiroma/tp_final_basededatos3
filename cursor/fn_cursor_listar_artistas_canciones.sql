@@ -1,4 +1,4 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `fn_cursor_listar_artistas_canciones`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cursor_listar_artistas_canciones`()
 BEGIN
     DECLARE finished INT DEFAULT 0;
     DECLARE artista_id INT;
