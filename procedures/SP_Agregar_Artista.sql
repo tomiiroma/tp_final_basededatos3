@@ -6,7 +6,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_artista`(
 BEGIN
 
 
-declare v_existe int;
+
 declare v_resultado varchar(100);
 
 
@@ -21,15 +21,13 @@ declare v_resultado varchar(100);
     
     START TRANSACTION;
 
-    Select COUNT(*) into v_existe from artista where trim(nombre) = trim(p_nombre);
+    
 
 
   
-	if v_existe > 0 then /* Verifica que el artista no se encuentre repetido en la base de datos */
+	
+	
     
-		select "El artista ya se encuentra agregado";
-		rollback;
-    else
 	    
 			if not p_nombre REGEXP '^[A-Za-z ]+$' THEN /* Verifica que el nombre del artista no se pueda ingresar numeros o carácteres especiales */
         
@@ -66,7 +64,7 @@ declare v_resultado varchar(100);
 		
 			end if;
     
-    end if;
+    
 
     
 END
