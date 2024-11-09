@@ -1,4 +1,4 @@
-CREATE DEFINER=`root`@`localhost` PROCEDURE `fn_cursor_listar_artistas_canciones`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_cursor_listar_artistas_canciones`()
 BEGIN
     DECLARE finished INT DEFAULT 0;
     DECLARE artista_id INT;
@@ -7,10 +7,16 @@ BEGIN
 
     -- Declarar el cursor
     DECLARE artista_cursor CURSOR FOR 
-        SELECT id, nombre FROM artistas;
+        SELECT id_artista, nombre FROM artista;
 
     -- Declarar un manejador para el fin del cursor
     DECLARE CONTINUE HANDLER FOR NOT FOUND SET finished = 1;
+
+    -- Crear una tabla temporal para almacenar los resultados
+    CREATE TEMPORARY TABLE IF NOT EXISTS temp_resultados (
+        Artista VARCHAR(255),
+        Numero_de_Canciones INT
+    );
 
     -- Abrir el cursor
     OPEN artista_cursor;
@@ -25,13 +31,17 @@ BEGIN
 
         -- Contar las canciones de cada artista
         SELECT COUNT(*) INTO total_canciones 
-        FROM canciones 
-        WHERE artista_id = artista_id;
+        FROM cancion
+        WHERE cancion.fk_artista = artista_id;
 
-        -- Mostrar los resultados
-        SELECT nombre_artista AS 'Artista', total_canciones AS 'Número de Canciones';
+        -- Insertar los resultados en la tabla temporal
+        INSERT INTO temp_resultados (Artista, Numero_de_Canciones)
+        VALUES (nombre_artista, total_canciones);
     END LOOP;
 
     -- Cerrar el cursor
     CLOSE artista_cursor;
+
+    -- Mostrar todos los resultados
+    SELECT * FROM temp_resultados;
 END
