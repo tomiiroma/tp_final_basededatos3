@@ -40,6 +40,7 @@ CREATE TABLE `artista` (
   `nombre` varchar(100) NOT NULL,
   `nacionalidad` varchar(100) NOT NULL,
   `descripcion` text DEFAULT NULL,
+  `total_canciones` int(11) DEFAULT 0,
   PRIMARY KEY (`id_artista`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
