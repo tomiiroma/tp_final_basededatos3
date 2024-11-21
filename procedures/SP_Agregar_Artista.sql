@@ -4,67 +4,48 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_agregar_artista`(
     IN p_descripcion TEXT
 )
 BEGIN
+    declare v_resultado varchar(100);
 
+    declare continue handler for sqlexception
+    begin
+        set v_resultado = 'Hubo un error al intentar agregar el artista.';
+        rollback;
+        select v_resultado as resultado;
+    end;
 
+ 
+    start transaction;
 
-declare v_resultado varchar(100);
-
-
-
-
-   DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
-	BEGIN
-    SET v_resultado = 'Hubo un error al intentar agregar el artista.';
-    ROLLBACK;
-    SELECT v_resultado AS resultado;
-	END;
+    /* Valida que el nombre no tiene caracteres especiales y numeros */
     
-    START TRANSACTION;
+    if not p_nombre REGEXP '^[A-Za-z ]+$' then
+        set v_resultado = 'El nombre no puede contener números o caracteres especiales.';
+        rollback;
+        select v_resultado as resultado;
 
-    
+    else
+   
+        if LENGTH(TRIM(p_nacionalidad)) > 0 and LENGTH(TRIM(p_nombre)) > 0 then
 
+            insert into artista (nombre, nacionalidad, descripcion)
+            values (TRIM(p_nombre), TRIM(p_nacionalidad), p_descripcion);
 
-  
-	
-	
-    
-	    
-			if not p_nombre REGEXP '^[A-Za-z ]+$' THEN /* Verifica que el nombre del artista no se pueda ingresar numeros o carácteres especiales */
-        
-			Select 'El nombre no puede contener numeros o carácteres especiales';
-		
-			Rollback;
+            commit;
+            set v_resultado = 'El artista fue agregado exitosamente.';
+            select v_resultado AS resultado;
 
-			else
-        
-					if Length(trim(p_nacionalidad)) > 0 and length(trim(p_nombre)) > 0 then /* Verifica que no se pueda ingresar cadenas vacias en el nombre y en la nacionalidad */
-			
-					Insert into artista (nombre, nacionalidad, descripcion) values (trim(p_nombre), trim(p_nacionalidad), p_descripcion);
-			
-					commit;
-        
-					Select 'El artista fue agregado exitosamente.' AS resultado;
-	
-					else 
-	
-								rollback;
-         
-								if Length(trim(p_nacionalidad)) = 0 then
-					
-								Select 'No se ha ingresado ninguna nacionalidad';
-								
-                                else
+        else
+            rollback;
             
-								select 'No se ha ingresado ningun nombre';
+            /* Verifica que la cadena sea mayor a 0 y no contengan espacios "     ", ya que trim se los saca */
             
-								end if;
-		
-		
-					end if;
-		
-			end if;
+            if LENGTH(TRIM(p_nacionalidad)) = 0 then
+                set v_resultado = 'No se ha ingresado ninguna nacionalidad.';
+            else
+                set v_resultado = 'No se ha ingresado ningún nombre.';
+            end if;
+            select v_resultado as resultado;
+        end if;
+    end if;
     
-    
-
-    
-END
+end
